@@ -7,8 +7,9 @@ const salaryform = document.querySelector('#salary');
 const billsform = document.querySelector('#bills');
 const dateform = document.querySelector('#date');
 
+
 const calcbtn = document.querySelector('#Calc');
-const tooglesalarybtn = document.querySelector('#toogle-btn');
+const tooglesalarybtn = document.querySelector('#toogle-lön');
 
 const footernone =  document.querySelector('footer');
 const inputsnone = document.querySelector('.inputs');
@@ -29,6 +30,25 @@ var billsp = document.querySelector('#bills-p');
 var datep = document.querySelector('#date-p');
 var summap =document.querySelector('#summa-p');
 
+function tooglefunction() {
+    var x = document.querySelector("#salary");
+    var x2 = document.querySelector("#salary2");
+    var x3 = document.querySelector('#salary3');
+    
+    if (x.style.display !== "none") {
+      x2.style.display = "block";
+      x3.style.display = "block";
+      x.style.display = "none";
+    } else {
+        x2.style.display = "none";
+        x3.style.display = "none";
+        x.style.display = "block";
+    }
+       
+    
+       
+    
+  }
 
 function calcfunction() {
 
@@ -67,7 +87,7 @@ function calcfunction() {
     
     
 }
-
+tooglesalarybtn.addEventListener('click',tooglefunction);
 calcbtn.addEventListener('click',calcfunction);
 
 

@@ -148,6 +148,14 @@ footer p {
   height: 5rem;
 }
 
+.inputs #salary2 {
+  display: none;
+}
+
+.inputs #salary3 {
+  display: none;
+}
+
 .footer-pad {
   padding-bottom: 5%;
 }
