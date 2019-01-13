@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skatteräknare</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+          <div class="navbar__logo--image">
+               <img id="home-top" src="/img/logo_home.png" alt="logo_av_företag">
+              </div>
+            
+             </div>
+                <div class="navbar__links">
+                    <a href="index.html" class="navbar__links--link">Home</a>
+                    <a href="Skatteraknare.html" class="navbar__links--link">Skatteräknare</a>
+                    <a href="support.html" class="navbar__links--link">Support</a>
+                </div>
+                    </nav>
+
+                            <div class="inputs">
+                    
+                                <input type="text" min="0" id="name" placeholder="Namn" class="Namn">
+                                <input type="text" id="adress" placeholder="Adress">
+                                <input type="text" id="kommun" placeholder="Kommun">
+                                <input type="text" id="pernum" placeholder="Person nummer">
+                                <input type="text" id="arbets" placeholder="Arbetsgivare">
+                                <input type="number" min="0" id="salary" placeholder="Månadslön Eller Timlön">
+                                <input type="number" min="0" id="bills" placeholder="Räkningar">
+                                <input type="date" id="date" min="2018-12-27">
+                                
+                                
+                                    
+                                        
+
+                                <div class="footer-pad">
+                                <button type="button"  id="Calc">Kalkylera!</button>
+                                
+                                
+                            </div>
+
+                                
+                            </div>
+
+                            <footer>
+                                <h1>Kontakt</h1>    
+                                <div class="footer__text">
+                                        <p>EMAIL: Skatteraknare@gmail.com</p>
+                                        <p>MOBILNR: 076-000-000-000</p>
+                                        <p>ADRESS: Företagsvägen 11 </p>
+                                            </div>
+                    </footer>
+
+                    <div class="p-spec">
+                        <p id ="namn-p"></p>
+                        <br>
+                        <p id ="adress-p"></p>
+                        <br>
+                        <p id ="kommun-p"></p>
+                        <br>
+                        <p id ="persnum-p"></p>
+                        <br>
+                        <p id ="arbetsgiv-p"></p>
+                        <br>
+                </div>
+            
+                <div class="border"></div>
+            
+                <div class="p-spec2">
+                         <br>
+                        <p id ="salary-p"></p>
+                        <br>
+                        <p id ="bills-p"></p>
+                        <br>
+                        <p>Skatt: 33%</p>
+                        <br>
+                        <p id ="date-p"></p>
+                        <br>
+                        <p id ="summa-p"></p>
+                </div>
+                    <script src="app.js"></script>
+</body>
+</html>

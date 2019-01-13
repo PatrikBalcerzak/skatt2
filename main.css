@@ -1,0 +1,268 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  font-size: 0.625rem;
+  scroll-behavior: smooth;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+body {
+  background-color: #D1D1D1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+button {
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 2rem;
+  border: 0.2rem solid black;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: #0e6e9e;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  min-height: 4.5rem;
+  line-height: 4.5rem;
+  background-color: #153C63;
+  /* Här en knapparna och hover effekten på dom i navbaren */
+}
+
+.navbar__logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+}
+
+.navbar__logo img {
+  width: 13rem;
+  height: 10rem;
+}
+
+.navbar__links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 4rem;
+}
+
+.navbar__links--link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.navbar__links--link:hover {
+  background-color: #0e6e9e;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.home__text {
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  padding-bottom: 5%;
+}
+
+.home__text h1 {
+  margin-top: 5rem;
+}
+
+footer {
+  border-radius: 0.8rem;
+  width: 100%;
+  margin: auto auto 0 auto;
+  background-color: #153C63;
+}
+
+footer h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+/* SkatteRäknare html */
+.inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-top: 5%;
+}
+
+.inputs input {
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+  padding: 2rem;
+  margin-top: 1rem;
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+}
+
+.inputs #Calc {
+  height: 5rem;
+}
+
+.footer-pad {
+  padding-bottom: 5%;
+}
+
+.p-spec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-size: 3rem;
+  display: none;
+}
+
+.border {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
+  display: none;
+}
+
+.p-spec2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-size: 3rem;
+  display: none;
+}
+
+/* Support html */
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-top: 5%;
+}
+
+form #support-message {
+  width: 75%;
+  margin: 0 auto 0 auto;
+  border: 0.3rem solid black;
+  border-radius: 0.5rem;
+  max-width: 80rem;
+  text-align: center;
+}
+
+form #send {
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20rem;
+  font-size: 3rem;
+  margin: 0 auto 0 auto;
+}
+
+/* Media queries från minst res till högst */
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .navbar img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .home__text {
+    letter-spacing: 0.1rem;
+    width: 60rem;
+  }
+  .navbar img {
+    width: 20rem;
+    height: 10rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .home__text {
+    width: 80rem;
+  }
+  footer h1 {
+    font-size: 5.5rem;
+  }
+  footer p {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home__text {
+    width: 95rem;
+    letter-spacing: 0.2rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  form #support-message {
+    max-width: 70%;
+    height: 60rem;
+    font-size: 3rem;
+  }
+  form #send {
+    font-size: 5rem;
+    height: 10rem;
+    width: 50rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
