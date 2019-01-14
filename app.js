@@ -13,6 +13,7 @@ const salarytim = document.querySelector('#salary2');
 const calcbtn = document.querySelector('#Calc');
 const tooglesalarybtn = document.querySelector('#toogle-lön');
 
+
 const footernone =  document.querySelector('footer');
 const inputsnone = document.querySelector('.inputs');
 const navbarnone = document.querySelector('.navbar');
@@ -31,6 +32,7 @@ var salaryp = document.querySelector('#salary-p');
 var billsp = document.querySelector('#bills-p');
 var datep = document.querySelector('#date-p');
 var summap =document.querySelector('#summa-p');
+var summap2 =document.querySelector('#summa-p2');
 var tidp = document.querySelector('#tid-p');
 var salaryp2 = document.querySelector('#salary2-p');
 
@@ -60,20 +62,33 @@ function tooglefunction() {
 
   function tooglefunctiontext () {
 
-    if (salaryform.style.display === "block") {
+    var ifsalary2 = document.querySelector('#salary2');
+    
+    
+
+    if (ifsalary2.style.display === "block") {
       
-        tidp.style.display = "block";
-        salaryp2.style.display = "block";
-        salaryp.style.display = "none";
+          tidp.style.display = "block";
+         salaryp2.style.display = "block";
+         salaryp.style.display = "none";
+         summap.style.display = "none";
+         summap2.style.display = "block";
+         console.log(5);
         
-        
-      } else {
+      } else if (ifsalary2.style.display !== "block") {
          
         tidp.style.display = "none";
         salaryp2.style.display = "none";
         salaryp.style.display = "block";
+        summap2.style.display = "none";
+        console.log(50);
+
+       
           
-      }
+      }  else {
+          
+        alert("Något gick fel! Kontrollera info du skrev in.");  
+      }       
 }
 
 function calcfunction() {
@@ -86,10 +101,19 @@ function calcfunction() {
     salaryform;
     billsform;
     dateform;
-    var skatt = 0.77
-    let summa = salaryform.value - billsform.value * skatt;
+    var skatt = 0.33;
+
+    let summabeforeskattm = salaryform.value - billsform.value;
+
+    let summaefterskattm = summabeforeskattm * skatt;
+
+    let summabeforeskatttim = salarytim.value * time.value;
+
+    let summaafterskatttimbills = summabeforeskatttim - billsform.value;
+
+    let summatim = summaafterskatttimbills * skatt;
+
     
-    console.log(summa);  
 
     footernone.style.display ="none";
     inputsnone.style.display = "none";
@@ -110,7 +134,8 @@ function calcfunction() {
     billsp.innerHTML = "Räkningar: "+billsform.value;
     datep.innerHTML = "Datum: "+dateform.value;
     tidp.innerHTML = "Tid: " +time.value;
-    summap.innerHTML ="Summa: "+summa;
+    summap.innerHTML = "Summa: "+summaefterskattm;
+    summap2.innerHTML = "Summa: "+summatim;
     
 
     
