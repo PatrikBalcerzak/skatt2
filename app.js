@@ -6,6 +6,8 @@ const arbetsform = document.querySelector('#arbets');
 const salaryform = document.querySelector('#salary');
 const billsform = document.querySelector('#bills');
 const dateform = document.querySelector('#date');
+const time = document.querySelector('#salary3');
+const salarytim = document.querySelector('#salary2');
 
 
 const calcbtn = document.querySelector('#Calc');
@@ -29,20 +31,30 @@ var salaryp = document.querySelector('#salary-p');
 var billsp = document.querySelector('#bills-p');
 var datep = document.querySelector('#date-p');
 var summap =document.querySelector('#summa-p');
+var tidp = document.querySelector('#tid-p');
+var salaryp2 = document.querySelector('#salary2-p');
 
 function tooglefunction() {
     var x = document.querySelector("#salary");
     var x2 = document.querySelector("#salary2");
     var x3 = document.querySelector('#salary3');
+   
     
+
     if (x.style.display !== "none") {
       x2.style.display = "block";
       x3.style.display = "block";
       x.style.display = "none";
+      
+     
+      
+      
     } else {
+       
         x2.style.display = "none";
         x3.style.display = "none";
         x.style.display = "block";
+        
     }
        
     
@@ -79,14 +91,18 @@ function calcfunction() {
     persnump.innerHTML = "Person Nummer: "+persnumform.value;
     arbetsp.innerHTML = "Arbetsgivare: "+arbetsform.value;
     salaryp.innerHTML = "Lön: "+salaryform.value;
+    salaryp2.innerHTML = "Timlön: "+salarytim.value;
+    
     billsp.innerHTML = "Räkningar: "+billsform.value;
     datep.innerHTML = "Datum: "+dateform.value;
+    tidp.innerHTML = "Tid: " +time.value;
     summap.innerHTML ="Summa: "+summa;
     
 
     
     
 }
+
 tooglesalarybtn.addEventListener('click',tooglefunction);
 calcbtn.addEventListener('click',calcfunction);
 
