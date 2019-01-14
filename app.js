@@ -55,12 +55,26 @@ function tooglefunction() {
         x3.style.display = "none";
         x.style.display = "block";
         
-    }
-       
-    
-       
-    
+    }    
   }
+
+  function tooglefunctiontext () {
+
+    if (salaryform.style.display === "block") {
+      
+        tidp.style.display = "block";
+        salaryp2.style.display = "block";
+        salaryp.style.display = "none";
+        
+        
+      } else {
+         
+        tidp.style.display = "none";
+        salaryp2.style.display = "none";
+        salaryp.style.display = "block";
+          
+      }
+}
 
 function calcfunction() {
 
@@ -90,7 +104,7 @@ function calcfunction() {
     kommunp.innerHTML = "Kommun: "+kommunform.value;
     persnump.innerHTML = "Person Nummer: "+persnumform.value;
     arbetsp.innerHTML = "Arbetsgivare: "+arbetsform.value;
-    salaryp.innerHTML = "Lön: "+salaryform.value;
+    salaryp.innerHTML = "Månadslön: "+salaryform.value;
     salaryp2.innerHTML = "Timlön: "+salarytim.value;
     
     billsp.innerHTML = "Räkningar: "+billsform.value;
@@ -105,6 +119,7 @@ function calcfunction() {
 
 tooglesalarybtn.addEventListener('click',tooglefunction);
 calcbtn.addEventListener('click',calcfunction);
+calcbtn.addEventListener('click',tooglefunctiontext);
 
 
 
