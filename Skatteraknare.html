@@ -24,14 +24,14 @@
 
                             <div class="inputs">
                     
-                                <input type="text" min="0" id="name" placeholder="Namn" class="Namn">
+                                <input type="text" min="1" id="name" placeholder="Namn" class="Namn" >
                                 <input type="text" id="adress" placeholder="Adress">
                                 <input type="text" id="kommun" placeholder="Kommun">
-                                <input type="text" id="pernum" placeholder="Person nummer">
+                                <input type="number" min="1" id="pernum" placeholder="Person nummer">
                                 <input type="text" id="arbets" placeholder="Arbetsgivare">
-                                <input type="number" min="0" id="salary" placeholder="Månadslön">
-                                <input type="number" min="0" id="salary2" placeholder="Timlön">
-                                <input type="number" min="0" id="salary3" placeholder="Timmar">
+                                <input type="number" min="1" id="salary" placeholder="Månadslön">
+                                <input type="number" min="1" id="salary2" placeholder="Timlön">
+                                <input type="number" min="1" id="salary3" placeholder="Timmar">
                                 <input type="number" min="0" id="bills" placeholder="Räkningar">
                                 <input type="date" id="date" min="2018-12-27">
                                 
@@ -83,7 +83,7 @@
                         <br>
                         <p id ="bills-p"></p>
                         <br>
-                        <p>Skatt: 33%</p>
+                        <p id ="skatt-p"></p>
                         <br>
                         <p id ="date-p"></p>
                         <br>

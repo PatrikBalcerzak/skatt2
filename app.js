@@ -35,52 +35,60 @@ var summap =document.querySelector('#summa-p');
 var summap2 =document.querySelector('#summa-p2');
 var tidp = document.querySelector('#tid-p');
 var salaryp2 = document.querySelector('#salary2-p');
+var skattp = document.querySelector('#skatt-p');
+
+var skatt = 0.33;
+
+function displaystart () {
+
+   footernone.style.display ="none";
+    inputsnone.style.display = "none";
+    navbarnone.style.display = "none";
+    pspecdisplay.style.display = "block";
+    pspecdisplay2.style.display = "block";
+    borderdisplay.style.display = "block";
+
+}
+
 
 function tooglefunction() {
-    var x = document.querySelector("#salary");
-    var x2 = document.querySelector("#salary2");
-    var x3 = document.querySelector('#salary3');
-   
-    
 
-    if (x.style.display !== "none") {
-      x2.style.display = "block";
-      x3.style.display = "block";
-      x.style.display = "none";
+    if (salaryform.style.display !== "none") {
+      salarytim.style.display = "block";
+      time.style.display = "block";
+      salaryform.style.display = "none";
       
      
       
       
     } else {
        
-        x2.style.display = "none";
-        x3.style.display = "none";
-        x.style.display = "block";
+        salarytim.style.display = "none";
+        time.style.display = "none";
+        salaryform.style.display = "block";
         
     }    
   }
 
   function tooglefunctiontext () {
 
-    var ifsalary2 = document.querySelector('#salary2');
-    
-    
-
-    if (ifsalary2.style.display === "block") {
+    if (salarytim.style.display === "block") {
       
-          tidp.style.display = "block";
-         salaryp2.style.display = "block";
+        tidp.style.display = "block";
+        salarytim.style.display = "block";
          salaryp.style.display = "none";
          summap.style.display = "none";
          summap2.style.display = "block";
          console.log(5);
         
-      } else if (ifsalary2.style.display !== "block") {
+      } else if (salarytim.style.display !== "block") {
          
         tidp.style.display = "none";
-        salaryp2.style.display = "none";
+        salaryp2.style.display ="none";
+        salarytim.style.display = "none";
         salaryp.style.display = "block";
         summap2.style.display = "none";
+        skattp.style.display = "block";
         console.log(50);
 
        
@@ -91,60 +99,48 @@ function tooglefunction() {
       }       
 }
 
-function calcfunction() {
+function calcfunctiondisplayskatt () {
+  
+  let skattm = salaryform.value * skatt;
 
-    firstname;
-    adressform;
-    kommunform;
-    persnumform;
-    arbetsform;
-    salaryform;
-    billsform;
-    dateform;
-    var skatt = 0.33;
-
-    let summabeforeskattm = salaryform.value - billsform.value;
-
-    let summaefterskattm = summabeforeskattm * skatt;
-
-    let summabeforeskatttim = salarytim.value * time.value;
-
-    let summaafterskatttimbills = summabeforeskatttim - billsform.value;
-
-    let summatim = summaafterskatttimbills * skatt;
-
-    
-
-    footernone.style.display ="none";
-    inputsnone.style.display = "none";
-    navbarnone.style.display = "none";
-    pspecdisplay.style.display = "block";
-    pspecdisplay2.style.display = "block";
-    borderdisplay.style.display = "block";
-   
-
-    namnp.innerHTML = "Namn: "+firstname.value;
-    adressp.innerHTML = "Adress: "+adressform.value;
-    kommunp.innerHTML = "Kommun: "+kommunform.value;
-    persnump.innerHTML = "Person Nummer: "+persnumform.value;
-    arbetsp.innerHTML = "Arbetsgivare: "+arbetsform.value;
-    salaryp.innerHTML = "Månadslön: "+salaryform.value;
-    salaryp2.innerHTML = "Timlön: "+salarytim.value;
-    
-    billsp.innerHTML = "Räkningar: "+billsform.value;
-    datep.innerHTML = "Datum: "+dateform.value;
-    tidp.innerHTML = "Tid: " +time.value;
-    summap.innerHTML = "Summa: "+summaefterskattm;
-    summap2.innerHTML = "Summa: "+summatim;
-    
-
-    
-    
 }
 
+function skrivutpochcalc () {
+ 
+  let summabeforeskattm = salaryform.value - billsform.value;
+
+  let summaefterskattm = summabeforeskattm * skatt;
+  
+  let summabeforeskatttim = salarytim.value * time.value;
+
+  let summaafterskatttimbills = summabeforeskatttim - billsform.value;
+
+  let summatim = summaafterskatttimbills * skatt;  
+  
+
+  namnp.innerHTML = "Namn: "+firstname.value;
+  adressp.innerHTML = "Adress: "+adressform.value;
+  kommunp.innerHTML = "Kommun: "+kommunform.value;
+  persnump.innerHTML = "Person Nummer: "+persnumform.value;
+  arbetsp.innerHTML = "Arbetsgivare: "+arbetsform.value;
+  salaryp.innerHTML = "Månadslön: "+salaryform.value;
+  salaryp2.innerHTML = "Timlön: "+salarytim.value;
+  
+  billsp.innerHTML = "Räkningar: "+billsform.value;
+  datep.innerHTML = "Datum: "+dateform.value;
+  tidp.innerHTML = "Tid: " +time.value;
+  summap.innerHTML = "Summa: "+summaefterskattm;
+  summap2.innerHTML = "Summa: "+summatim;
+
+}
+
+
 tooglesalarybtn.addEventListener('click',tooglefunction);
-calcbtn.addEventListener('click',calcfunction);
+calcbtn.addEventListener('click',displaystart);
 calcbtn.addEventListener('click',tooglefunctiontext);
+calcbtn.addEventListener('click',skrivutpochcalc);
+
+
 
 
 
