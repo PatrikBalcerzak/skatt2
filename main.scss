@@ -1,16 +1,16 @@
+/* här sätter jag margin 0 och padding 0 och font som jag vill använda */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
 }
-
+/* font size för rem så den anpassar sig efter screensize och en transition duration som gör en enkel animation är den scalar till andra res*/
 html {
     font-size: 0.625rem;
-    scroll-behavior: smooth;
     transition-duration: .3s;
     
 }
-
+/* Sätter bgc på sidan och 100vh så footern är sticky och flex */
 body {
     background-color:#D1D1D1;
     display: flex;
@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
     
 }
-
+/* olika properys för knappar så att jag slipper använda koden om och om igen */
 button {
     width: 20%;
     margin-left: 40%;
@@ -26,19 +26,21 @@ button {
     border: 0.2rem solid black;
     border-radius: 0.5rem;
     
+    
 }
-
+/* hover för alla knappar */
 button:hover{
     background-color: rgb(14, 110, 158);
     transition: all .5s;
 }
-
+/* flex med min height o line med färg med logo med flex och heigh o width på bilden så den kan anpassas efter res med media querries */
 .navbar {
     display: flex;
     flex-flow: row wrap;
     min-height: 4.5rem;
     line-height: 4.5rem;
     background-color: #153C63;
+    
 
     &__logo {
         flex: 1 auto;
@@ -51,11 +53,12 @@ button:hover{
         
       
     }
-            /* Här en knapparna och hover effekten på dom i navbaren */
+            /* Här en knapparna (länkarna) och hover effekten på dom i navbaren */
     &__links {
         flex: 1 auto;
         display: flex;
         margin-top: 4rem;
+         
         
         
 
@@ -77,14 +80,22 @@ button:hover{
         }
 
         
+        
     }
 }
+/* animatione som är fade in som ligger vid info texten*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
+/* texten för home där det finns info */
 .home__text {
     margin-left: 2rem;
     font-size: 1.8rem;
     letter-spacing: 0.2rem;
     padding-bottom: 5%;
+    animation: fadein 2s;
 
     h1 {
         margin-top: 5rem;
@@ -115,7 +126,7 @@ footer {
 
 /* SkatteRäknare html */
 
-
+/* inputs med flex så dom anpassas efter screen res */
 .inputs {
     display: flex;
     flex-direction: column;
@@ -138,6 +149,16 @@ footer {
         height: 5rem;
      
     }
+     
+    #toogle-lön {
+            display: flex;
+            flex-direction: column;
+            height: 5rem;
+            max-width: 50%;
+            text-align: center;
+            justify-content: center;
+            padding-left: 11rem;
+    }
 
     #salary2 {
             display: none;
@@ -147,36 +168,54 @@ footer {
         display: none;
 }
 } 
-
+/* padding mellan skatteknapparna */
 .footer-pad {
     padding-bottom: 5%;
-}
+    text-align: center;
+    justify-content: center;
+    width: 100%;
 
+}
+/* p som vissas vid lönespec vissas inte om du inte klickar knappen PS: för att se namnet som skrivs ut måste du scrolla uppot*/
 .p-spec {
    display: flex;
    text-align: center;
    font-size: 3rem;
     display: none;
+    animation: fadein 2s;
 }
-
+/* border vid lönespec vissas inte om du inte klickar på knappen */
 .border {
     border-style: solid;
-    border-width: 1px 1px 1px 1px;
+    border-width: 2px 2px 2px 2px;
     border-color: black;
     display: none;
+    animation: fadein 2s;
 }
-    
+    /*  samma sak som p-spec */
 .p-spec2 {
     display: flex;
     text-align: center;
     font-size: 3rem;
      display: none;
+     animation: fadein 2s;
+/* tillbaka knappen som har samma kod som buttons men den är en form istället så jag kan gå tillbaka till skatteraknare.html */
+        #tillbaka-btn {
+        width: 20%;
+        margin-left: 40%;
+        margin-top: 2rem;
+        border: 0.2rem solid black;
+        border-radius: 0.5rem;  
+        height: 3rem;
+
+    }
     }
 
 
 
 /* Support html */
 
+/* support formen där man skriver så den anpassas */
          form {
             display: flex;
             flex-direction: column;
@@ -184,7 +223,7 @@ footer {
             width: 100%;
             padding-top: 5%;
             
-
+/* själva text prop i formen */
             #support-message {
                 width: 75%;
                 margin: 0 auto 0 auto;
@@ -193,6 +232,7 @@ footer {
                 max-width: 80rem;
                 text-align: center;
             }
+            /* skicka knappen anpassas med flex */
             #send {
                 height: 5rem;
                 display: flex;
@@ -203,22 +243,141 @@ footer {
             }
 
         }
-
+        /*  dom knappars som JS letar efter som är display none så JS inte krashar*/
+        .nodisplaysupport {
+            display: none;
+        }
    
 
 
 
-        /* Media queries från minst res till högst */ 
+        /* Media queries från minst res till högst */
+        
+       
 
-        @media screen and (min-width: 300px) and (max-width: 600px)  {
+        /* mobile media querries har en annan navbar och den vissar ingen loga för att göra det enkelt för användaren och en bra UX */
+        /* Desktop scallar bara up */
+        /* Jag börja med runt 450px darför finns det medias som är under den res och över  */
+        @media screen and (min-width: 320px) and (max-width: 375px)  {
             .navbar {
+
+                width: 32rem;
+                
                 img {
                     display: none;
                 }
+
+                &__links {
+                    flex-direction: column;
+                    text-align: center;
+                    margin-right: 5rem;
+                      
+                     
+             
+                     &--link {
+                         flex: 1 auto;
+                         text-decoration: none;
+                         color: black;
+                         text-align: center;
+                         font-size: 3rem;
+                         max-width: 10%;
+                         margin-left: 10rem;
+                         padding-top: 5%;
+                     }
+
+
             }
         }
+            
+            .inputs {
+                
+            
+                #Calc {
+                    height: 5rem;
+                    width: 50%;
+                    margin-left: 4rem;
+                }
+                 
+                #toogle-lön {
+                        width: 50%;
+                        margin-left: 10rem;
+                        height: 5rem;
+                        padding-left: 3rem;
+                }
 
-        @media screen and (min-width: 769px) {
+
+        }
+}
+   
+
+    @media screen and (min-width: 375px) and (max-width: 767px)  {
+        .navbar {
+            
+        
+            &__logo {
+                
+                
+        
+                img {
+                     display: none;   
+                }
+                
+              
+            }
+                    /* Här en knapparna och hover effekten på dom i navbaren */
+            &__links {
+               flex-direction: column;
+               text-align: center;
+               margin-right: 5rem;
+                 
+                
+        
+                &--link {
+                    flex: 1 auto;
+                    text-decoration: none;
+                    color: black;
+                    text-align: center;
+                    font-size: 3rem;
+                    max-width: 10%;
+                    margin-left: 10rem;
+                    padding-top: 5%;
+                    
+                   
+        
+                    &:hover{
+                        background-color: rgb(14, 110, 158);
+                        transition: all .5s;
+                       
+                       
+                    }
+                }
+        
+                
+                
+            }
+        }
+        
+        .inputs {
+            
+        
+            #Calc {
+                height: 5rem;
+                width: 30%;
+               margin-left: 10%;
+            }
+             
+            #toogle-lön {
+                    width: 30%;
+                    padding-left: 1rem;                 
+                    height: 5rem;
+                 
+            }
+
+
+    }
+}
+
+        @media screen and (min-width: 768px) {
             .home__text {
                 letter-spacing: 0.1rem;
                 width: 60rem;
@@ -235,6 +394,18 @@ footer {
                 }
             }
 
+            .inputs {
+               
+                #Calc {
+                    margin-left: 0rem;
+                } 
+
+                #toogle-lön {    
+                    margin-left: 40%;
+                    padding-left: 3rem;
+                        
+                }
+            }
         }
         
         @media screen and (min-width: 900px) {
@@ -251,6 +422,12 @@ footer {
                      font-size: 2.5rem;
                  }
             }
+
+            .inputs {
+                #toogle-lön {
+                    padding-left: 6rem;
+                }
+            }
         }
 
         @media screen and (min-width: 1024px) {
@@ -260,9 +437,68 @@ footer {
             }
 
         }
+
+        @media screen and (min-width: 1440px ) {
+            .inputs {
+                #toogle-lön {
+                    padding-left: 10rem;
+                }
+            }
+        }
         
-        @media screen and (min-width: 2560px) {
-          
+        @media screen and (min-width: 2559px) {
+            .home__text {
+                width: 120rem;
+                letter-spacing: 0.2rem;
+                font-size: 3rem;
+            }
+                        
+            .navbar {
+
+                
+                img {
+                    width: 30rem;
+                    height: 20rem;
+                }
+
+                &__links {
+                   
+                      
+                     
+             
+                     &--link {
+                         font-size: 5rem;
+                     }
+                    }
+                }
+            
+            .inputs {
+                 
+                input {
+                    font-size: 5rem;
+                }
+                
+                #toogle-lön {
+                    padding-left: 17rem;
+                    font-size: 3rem;
+                }
+
+                #Calc {
+                    font-size: 3rem;
+                }
+            }
+
+            footer {
+                
+                h1 {
+                    font-size: 8rem;
+                }
+                
+                p {
+                    font-size: 5rem;
+                }
+            }
+
             form {
 
                 #support-message {
@@ -278,7 +514,5 @@ footer {
                    width: 50rem;
                 }
             }
-        }
-        
-        
-       
+    }
+

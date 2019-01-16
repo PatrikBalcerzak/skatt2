@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <!-- Här är min navbar med alla mina länkar till andra html filer och logo -->
     <nav class="navbar">
         <div class="navbar__logo">
           <div class="navbar__logo--image">
-               <img id="home-top" src="/img/logo_home.png" alt="logo_av_företag">
+               <img id="home-top" src="img/logo_home.png" alt="logo_av_företag">
               </div>
             
              </div>
@@ -21,7 +22,7 @@
                     <a href="support.html" class="navbar__links--link">Support</a>
                 </div>
                     </nav>
-
+                        <!-- Här är alla mina inputs man kan skriva i så man får det utskrivet i lönspec -->
                             <div class="inputs">
                     
                                 <input type="text" min="1" id="name" placeholder="Namn" class="Namn" >
@@ -36,11 +37,12 @@
                                 <input type="date" id="date" min="2018-12-27">
                                 
                                 
+                                
                                     
                                         
-
+                                    <!-- Här är min toogle och min calc knapp dom har en klass som ger dom padding-top -->
                                 <div class="footer-pad">
-                                        <button type="button"  id="toogle-lön">Månadslön/Timlön</button>
+                                        <button type="button"  id="toogle-lön">Månad/Timlön</button>
                                 <button type="button"  id="Calc">Kalkylera!</button>
                                 
                                 
@@ -48,7 +50,7 @@
 
                                 
                             </div>
-
+                                <!-- Footer med info-->
                             <footer>
                                 <h1>Kontakt</h1>    
                                 <div class="footer__text">
@@ -57,7 +59,7 @@
                                         <p>ADRESS: Företagsvägen 11 </p>
                                             </div>
                     </footer>
-
+                        <!-- Löne spec P som ska skrivas ut -->
                     <div class="p-spec">
                         <p id ="namn-p"></p>
                         <br>
@@ -70,26 +72,34 @@
                         <p id ="arbetsgiv-p"></p>
                         <br>
                 </div>
-            
+            <!-- border för lönespec -->
                 <div class="border"></div>
-            
+            <!-- för att inte kroka med border så är det en ny klass för p lönspec-->
                 <div class="p-spec2">
                          <br>
                          <p id ="tid-p"></p>
                          <br>
                          <p id ="salary2-p"></p>
-                         <br>
+                         
                          <p id ="salary-p"></p>
                         <br>
                         <p id ="bills-p"></p>
                         <br>
                         <p id ="skatt-p"></p>
+                        <p id ="skatt-p2"></p>
                         <br>
                         <p id ="date-p"></p>
                         <br>
                         <p id ="summa-p"></p>
                         <p id ="summa-p2"></p>
+                        
+                        <br>
+                        <!-- Knappen som är i lönespec som länkar tillbaka till räknar.html filen-->
+                        <form action="Skatteraknare.html">
+                            <input type="submit" id="tillbaka-btn"value="Gå Tillbaka!" />
+                        </form>
                 </div>
+                <!-- Länkar JS -->
                     <script src="app.js"></script>
 </body>
 </html>

@@ -9,10 +9,11 @@
     <title>Support</title>
 </head>
 <body>
+    <!-- Här är min navbar med alla mina länkar till andra html filer och logo -->
         <nav class="navbar">
                 <div class="navbar__logo">
                   <div class="navbar__logo--image">
-                       <img id="home-top" src="/img/logo_home.png" alt="logo_av_företag">
+                       <img id="home-top" src="img/logo_home.png" alt="logo_av_företag">
                       </div>
                     
                      </div>
@@ -22,19 +23,19 @@
                             <a href="support.html" class="navbar__links--link">Support</a>
                         </div>
                             </nav>
-
+                                <!-- här är support rutan man kan skriva i -->
                                  <form action="">
                                      <textarea id="support-message" rows="10" cols="30">Beskriv Ditt Problem!</textarea>
                                      <br>
                                      <div class="footer-pad">
-                                            
+                                            <!--support knapp -->
                                      <button type="button" id="send">Skicka!</button>
                                      
                                     </div>
                                  </form>
                            
 
-
+                                        <!--footer med all info  -->
                                  <footer>
                                     <h1>Kontakt</h1>    
                                     <div class="footer__text">
@@ -43,6 +44,13 @@
                                             <p>ADRESS: Företagsvägen 11 </p>
                                                 </div>
                         </footer>
+                        <!--den klasses gör så att min js hittar #calc och #toogle-lön så den inte går sönder och kan fortsätta jobba -->
+                        <div class="nodisplaysupport">
+                        <button type="button"  id="Calc"></button>
+                        <button type="button"  id="toogle-lön"></button>
+                    </div>
+                    <!-- Länkar JS -->
+                        <script src="app.js"></script> 
     
 </body>
 </html>
